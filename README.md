@@ -1,4 +1,5 @@
 # foodvills
+<<<<<<< HEAD
 
 ## Project setup
 ```
@@ -27,3 +28,6 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+=======
+Find restaurants closest to you
+>>>>>>> da66b9b2a4982ad69d31ed2119cf818a65479e27
