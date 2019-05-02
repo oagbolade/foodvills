@@ -64,7 +64,6 @@
             }
         },
         async mounted(){
-            console.log(process.env.VUE_APP_GOOGLE_MAPS_KEY);
             await this.getURL();
             await this.getLatLng();
         }
