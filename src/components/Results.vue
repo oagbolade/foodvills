@@ -1,55 +1,37 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <div>
-      <button @click="updateMarker()">Change marker</button>
-    </div>
-    <div id="map"></div>
+  <div>
+      <Error v-bind:errorMessage="errorMessage" />
+      <div>
+          <a href="/"><button class="btn btn-outline-primary btn-lg">Home</button></a>
+      </div>
+      <Error v-bind:errorMessage="errorMessage" />
+    <Map v-bind:coordinates="coordinates" v-bind:restaurantNames="restaurantNames" />
   </div>
 </template>
 
 <script>
-export default {
+  import Map from './views/Map';
+  import Error from './views/Error';
+
+  export default {
   name: 'Results',
-  props: {
-    msg: String
-  },
+    components: {
+      Map,
+        Error
+    },
+    props: {
+      coordinates: Array,
+        restaurantNames: Array
+    },
     data() {
         return {
-            marker: [],
-            map: null,
-            myLatLng: {}
+            errorMessage: ''
         }
     },
     methods: {
-      updateMarker(){
-          this.myLatLng = {lat: 39.9042, lng: 116.4074};
-          this.showMarker();
-          this.setMapPosition();
-      },
-        showMarker(){
-            this.marker = new google.maps.Marker({
-                position: this.myLatLng,
-                map: this.map,
-                title: 'Hello World!'
-            });
-        },
 
-        setMap(){
-            this.marker.setMap(this.map);
-        }
     },
     mounted() {
-        this.myLatLng = {lat: -25.363, lng: 131.044};
-
-        this.map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 4,
-            center: this.myLatLng
-        });
-
-        this.showMarker();
-
-        this.setMap();
 
     }
 }
@@ -57,15 +39,7 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-  #map {
-    height: 400px;
-    width: 100%;
-    background-color: grey;
-  }
-
-  html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-  }
+    button{
+        margin: 12px;
+    }
 </style>

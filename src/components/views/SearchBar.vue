@@ -1,10 +1,12 @@
 <template>
     <div class="wrap">
         <div class="search">
-            <input id="searchTextField" type="text" class="searchTerm" placeholder="Where do you want to eat?">
-            <button type="submit" class="searchButton">
-                <font-awesome-icon icon="search" />
-            </button>
+            <form @submit="submitForm">
+                <input id="searchTextField" v-model="address" ref="address" type="text" class="searchTerm" placeholder="Enter your Location">
+                <button type="submit" class="searchButton">
+                    <font-awesome-icon icon="search" />
+                </button>
+            </form>
         </div>
     </div>
 </template>
@@ -12,22 +14,36 @@
 <script>
     export default {
         name: "SearchBar",
+        data(){
+            return{
+                address: ''
+            }
+        },
         methods:{
+            submitForm(e){
+                e.preventDefault();
+                this.address = this.$refs.address.value;
+
+                if (this.address.trim() === ''){
+                    return false;
+                }
+                window.location = `/latlng?address=${this.address}`;
+            }
 
         },
         mounted(){
-            var defaultBounds = new google.maps.LatLngBounds(
+            let defaultBounds = new google.maps.LatLngBounds(
                 new google.maps.LatLng(-33.8902, 151.1759),
                 new google.maps.LatLng(-33.8474, 151.2631));
 
-            var input = document.getElementById('searchTextField');
-            var options = {
+            let input = document.getElementById('searchTextField');
+            let options = {
                 //bounds: defaultBounds,
                 types: ['establishment'],
                 componentRestrictions: {country: 'ng'}
             };
 
-            var autocomplete = new google.maps.places.Autocomplete(input, options);
+            let autocomplete = new google.maps.places.Autocomplete(input, options);
         }
     }
 </script>
