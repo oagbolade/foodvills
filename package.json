@@ -7,7 +7,7 @@
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "start": "node server1.js",
-    "postbuild": "npm install --only=dev --no-shrinkwrap && npm run build && npm run serve"
+    "heroku-postbuild": "npm install --only=dev --no-shrinkwrap && npm run build && npm run serve"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.17",
