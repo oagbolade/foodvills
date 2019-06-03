@@ -2,7 +2,7 @@
     <div class="wrap">
         <div class="search">
             <form @submit="submitForm">
-                <input id="searchTextField" v-model="address" ref="address" type="text" class="searchTerm" placeholder="Enter your Location1">
+                <input id="searchTextField" v-model="address" ref="address" type="text" class="searchTerm" placeholder="Enter your Location">
                 <button type="submit" class="searchButton">
                     <font-awesome-icon icon="search" />
                 </button>
