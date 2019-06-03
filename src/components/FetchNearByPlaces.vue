@@ -4,11 +4,11 @@
         <div class="col-6 offset-5" v-bind:class="{ 'loader': this.loading, 'display': this.display }"></div>
         <div v-bind:class="{'hideContent': !this.display }">
             <!--<Results v-bind:coordinates="allCoordinates" v-bind:restaurantNames="restaurantNames" />-->
-            <div class="">
-                Nearest Restaurants and Cuisines
+            <div class="navbar">
+                <NavBar />
             </div>
             <div v-bind:key="" v-for="restaurant in restaurantData">
-                <div class="col-3">
+                <div class="col-4 offset-4">
                     <div class="card">
                         <div class="card-header">
                             <h4>{{restaurant.name}}</h4>
@@ -35,13 +35,13 @@
 
 <script>
     import axios from 'axios';
-    import Results from "./Results";
     import Error from './views/Error';
+    import NavBar from './views/NavBar';
     import MapModel from './views/MapModal';
 
     export default {
         name: "FetchNearByPlaces",
-        components: {Results, Error, MapModel},
+        components: {Error, MapModel, NavBar},
         props: ["latlng"],
         watch: {
           latlng: function () {
@@ -132,4 +132,8 @@
     margin-bottom: 15px;
     margin-top: 10px;
 }
+
+    .navbar{
+        margin-bottom: 15px;
+    }
 </style>
