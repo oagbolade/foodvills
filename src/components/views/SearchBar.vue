@@ -32,18 +32,24 @@
 
         },
         mounted(){
-            let defaultBounds = new google.maps.LatLngBounds(
-                new google.maps.LatLng(-33.8902, 151.1759),
-                new google.maps.LatLng(-33.8474, 151.2631));
+            this.$loadScript(`https://maps.googleapis.com/maps/api/js?key=${process.env.VUE_APP_GOOGLE_MAPS_KEY}&libraries=places`)
+                .then(() => {
+                    let defaultBounds = new google.maps.LatLngBounds(
+                        new google.maps.LatLng(-33.8902, 151.1759),
+                        new google.maps.LatLng(-33.8474, 151.2631));
 
-            let input = document.getElementById('searchTextField');
-            let options = {
-                //bounds: defaultBounds,
-                types: ['establishment'],
-                componentRestrictions: {country: 'ng'}
-            };
+                    let input = document.getElementById('searchTextField');
+                    let options = {
+                        //bounds: defaultBounds,
+                        types: ['establishment'],
+                        componentRestrictions: {country: 'ng'}
+                    };
 
-            let autocomplete = new google.maps.places.Autocomplete(input, options);
+                    let autocomplete = new google.maps.places.Autocomplete(input, options);
+                })
+                .catch((err) => {
+                    console.log(err);
+                });
         }
     }
 </script>

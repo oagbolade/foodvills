@@ -8,6 +8,9 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 import VueRouter from "vue-router";
 import routes from './router'
 import axios from 'axios';
+import LoadScript from 'vue-plugin-load-script';
+
+Vue.use(LoadScript);
 Vue.use(axios);
 Vue.prototype.$http = axios;
 Vue.use(VueRouter);

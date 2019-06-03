@@ -1,6 +1,5 @@
 <template>
   <div>
-      <Error v-bind:errorMessage="errorMessage" />
       <div>
           <a href="/"><button class="btn btn-outline-primary btn-lg">Home</button></a>
       </div>
