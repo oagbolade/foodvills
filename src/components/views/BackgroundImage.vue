@@ -18,7 +18,7 @@
 
 <style scoped>
     .myBackground{
-        background-image: url("../../assets/backgroundFood2.jpg");
+        background-image: url("../../assets/backgroundFood2compressed.jpg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: absolute;
