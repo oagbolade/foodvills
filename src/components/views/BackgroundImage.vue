@@ -18,7 +18,7 @@
 
 <style scoped>
     .myBackground{
-        background-image: url("../../assets/backgroundFood2compressed.jpg");
+        background-image: url("https://res.cloudinary.com/oladayoagbolade/image/upload/v1559559988/uc53zasue8aw38lmmlzt.jpg");
         background-size: 100% 100%;
         background-repeat: no-repeat;
         position: absolute;
