@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="col-6 offset-5" v-bind:class="{ 'loader': this.loading }"></div>
+        <div class="col-md-6 offset-md-5 col-sm-4" v-bind:class="{ 'loader': this.loading }"></div>
         <transition name="modal">
             <div v-bind:class="{'hideContent': !this.display }">
                 <div class="modal-mask">
@@ -127,7 +127,8 @@
     }
 
     .modal-container {
-        width: 600px;
+        width: 70%;
+        height: auto;
         margin: 0px auto;
         padding: 20px 30px;
         background-color: #fff;
@@ -143,7 +144,8 @@
     }
 
     .modal-body {
-        margin: 20px 0;
+        margin: 0;
+        padding: 5px;
     }
 
     .modal-default-button {
@@ -173,4 +175,13 @@
         transform: scale(1.1);
     }
 
+    @media screen and (max-width: 650px) {
+        #map {
+           height: 230px;
+        }
+
+        .modal-container {
+            width: 97%;
+        }
+    }
 </style>
