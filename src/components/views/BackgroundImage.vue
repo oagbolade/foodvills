@@ -29,23 +29,9 @@
         bottom: 0;
     }
 
-    @media screen and (max-width: 1060px) {
-        .myBackground {
-            background-image: url("../../assets/backgroundFood1096.jpg");
-            background-size: 100% 100%;
-            background-repeat: no-repeat;
-            position: absolute;
-            width: 100%;
-            height: auto;
-            top: 0;
-            margin: 0;
-            bottom: 0;
-        }
-    }
-
     @media screen and (max-width: 650px) {
         .myBackground {
-            background-image: url("../../assets/backgroundFood650.jpg");
+            background-image: url("https://res.cloudinary.com/oladayoagbolade/image/upload/v1565100480/geaw8otneel1mbyhg52j.jpg");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             position: absolute;

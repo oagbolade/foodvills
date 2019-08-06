@@ -6,7 +6,7 @@
         <a class="navbar-brand" href="/">FoodVills</a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Back</button>
+            <a href="/"><button class="btn btn-outline-success my-2 my-sm-0" type="submit">Back</button></a>
         </div>
     </nav>
 </template>
