@@ -6,12 +6,7 @@
         <a class="navbar-brand" href="/">FoodVills</a>
 
         <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item">
-                    <h5>Search Results..</h5>
-                </li>
-            </ul>
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Home</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Back</button>
         </div>
     </nav>
 </template>
@@ -25,5 +20,19 @@
 <style scoped>
     li h5{
         align-content: center;
+    }
+
+    @media screen and (max-width: 650px) {
+        .myBackground {
+            background-image: url("../../assets/backgroundFood650.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 0;
+            margin: 0;
+            bottom: 0;
+        }
     }
 </style>

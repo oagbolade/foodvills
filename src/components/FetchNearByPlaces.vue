@@ -7,8 +7,8 @@
             <div class="navbar">
                 <NavBar />
             </div>
-            <div v-bind:key="" v-for="restaurant in restaurantData">
-                <div class="col-4 offset-4">
+            <div class="container" v-bind:key="" v-for="restaurant in restaurantData">
+                <div class="col-md-6 offset-md-4">
                     <div class="card">
                         <div class="card-header">
                             <h4>{{restaurant.name}}</h4>
@@ -130,10 +130,13 @@
 
 .card{
     margin-bottom: 15px;
-    margin-top: 10px;
 }
 
     .navbar{
-        margin-bottom: 15px;
+        padding: 30px;
+    }
+
+    .container{
+        margin-top: 50px;
     }
 </style>

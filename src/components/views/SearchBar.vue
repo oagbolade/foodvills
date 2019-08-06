@@ -99,4 +99,18 @@
         left: 50%;
         transform: translate(-50%, -50%);
     }
+
+
+    @media screen and (max-width: 950px) {
+        .wrap {
+            width: 70%;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .wrap {
+            width: 70%;
+            padding-right: 10px;
+        }
+    }
 </style>

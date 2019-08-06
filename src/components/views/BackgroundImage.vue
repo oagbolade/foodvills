@@ -23,9 +23,51 @@
         background-repeat: no-repeat;
         position: absolute;
         width: 100%;
-        height: 100%;
+        height: auto;
         top: 0;
         margin: 0;
         bottom: 0;
     }
+
+    @media screen and (max-width: 1060px) {
+        .myBackground {
+            background-image: url("../../assets/backgroundFood1096.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 0;
+            margin: 0;
+            bottom: 0;
+        }
+    }
+
+    @media screen and (max-width: 650px) {
+        .myBackground {
+            background-image: url("../../assets/backgroundFood650.jpg");
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            position: absolute;
+            width: 100%;
+            height: auto;
+            top: 0;
+            margin: 0;
+            bottom: 0;
+        }
+    }
+
+    /*@media screen and (max-width: 1060px) {*/
+    /*    body {*/
+    /*        background-image: url("../../assets/backgroundFood1096.jpg");*/
+    /*        background-size: 100% 100%;*/
+    /*        background-repeat: no-repeat;*/
+    /*        position: absolute;*/
+    /*        width: 100%;*/
+    /*        height: 100%;*/
+    /*        top: 0;*/
+    /*        margin: 0;*/
+    /*        bottom: 0;*/
+    /*    }*/
+    /*}*/
 </style>
