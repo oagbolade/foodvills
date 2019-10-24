@@ -3,7 +3,7 @@
         <div class="col-md-6 offset-md-5 col-sm-4" v-bind:class="{ 'loader': this.loading }"></div>
         <transition name="modal">
             <div v-bind:class="{'hideContent': !this.display }">
-                <div class="modal-mask">
+                <div class="modal-mask" @click="$emit('toggleModal')">
                     <div class="modal-wrapper">
                         <div class="modal-container">
 

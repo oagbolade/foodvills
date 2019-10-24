@@ -23,7 +23,7 @@
                 url: 'https://maps.googleapis.com/maps/api/geocode/json?',
                 type: 'restaurant',
                 proxy: 'https://cors-anywhere.herokuapp.com/',
-                key: process.env.VUE_APP_GOOGLE_MAPS_KEY,
+                key: process.env.VUE_APP_GOOGLE_MAPS_KEY || process.env.API_KEY,
                 inputtype: 'textquery',
                 address: '',
                 fields: 'photos,formatted_address,name,rating,opening_hours,geometry',

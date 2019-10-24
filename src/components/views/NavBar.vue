@@ -24,7 +24,7 @@
 
     @media screen and (max-width: 650px) {
         .myBackground {
-            background-image: url("../../assets/backgroundFood650.jpg");
+            background-image: url("../../assets/backgroundImagesFoodVillsSmall.jpg");
             background-size: 100% 100%;
             background-repeat: no-repeat;
             position: absolute;

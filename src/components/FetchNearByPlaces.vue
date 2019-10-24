@@ -64,7 +64,7 @@
                 nearByURL: 'https://maps.googleapis.com/maps/api/place/nearbysearch/json?',
                 type: 'restaurant',
                 proxy: 'https://cors-anywhere.herokuapp.com/',
-                key: process.env.VUE_APP_GOOGLE_MAPS_KEY,
+                key: process.env.VUE_APP_GOOGLE_MAPS_KEY || process.env.API_KEY,
                 restaurantData: [],
                 errorMessage: ''
             }
