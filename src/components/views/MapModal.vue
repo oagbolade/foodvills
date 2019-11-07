@@ -1,9 +1,9 @@
 <template>
     <div>
-        <div class="col-md-6 offset-md-5 col-sm-4" v-bind:class="{ 'loader': this.loading }"></div>
+        <div class="col-md-6 offset-md-5 col-sm-4"></div>
         <transition name="modal">
-            <div v-bind:class="{'hideContent': !this.display }">
-                <div class="modal-mask" @click="$emit('toggleModal')">
+            <div>
+                <div class="modal-mask">
                     <div class="modal-wrapper">
                         <div class="modal-container">
 
@@ -50,22 +50,21 @@
         data() {
             return{
                 showModal: false,
-                display: false,
-                loading: true
             }
         },
         methods: {
             initMap() {
                 let restaurant = {lat: this.lat, lng: this.lng};
-                this.isLoading(restaurant);
+                if (this.dataExists(restaurant)) {
+                    this.$emit("toggleSpinner");
+                }
                 let map = new google.maps.Map(
                     document.getElementById('map'), {zoom: 15, center: restaurant});
                 let marker = new google.maps.Marker({position: restaurant, map: map});
             },
-            isLoading(coordinateData){
+            dataExists(coordinateData){
                 if (coordinateData.lng.length !== 0 && coordinateData.lng.length !== 0){
-                    this.loading = !this.loading;
-                    this.display = !this.display;
+                    return true;
                 }
             }
         },
@@ -82,27 +81,6 @@
 </script>
 
 <style scoped>
-    .hideContent{
-        display: none;
-    }
-
-    /*Loading Spinner Start*/
-    .loader {
-        margin-top: 200px;
-        border: 16px solid #f3f3f3; /* Light grey */
-        border-top: 16px solid #3498db; /* Blue */
-        border-radius: 50%;
-        width: 120px;
-        height: 120px;
-        animation: spin 2s linear infinite;
-    }
-
-    @keyframes spin {
-        0% { transform: rotate(0deg); }
-        100% { transform: rotate(360deg); }
-    }
-    /*Loading Spinner End*/
-
     #map {
         width: 100%;
         height: 400px;
